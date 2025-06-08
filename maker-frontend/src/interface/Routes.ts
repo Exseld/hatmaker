@@ -1,4 +1,4 @@
-const baseBE = "http://localhost:8080";
+const baseBE = import.meta.env.VITE_BACKEND_URL;
 
 export enum RoutesFE {
     Accueil = "/accueil",
@@ -14,21 +14,21 @@ export enum RoutesFE {
     HoraireActivites = "/horaire-activites/:id",
 }
 
-export enum RoutesBE {
-    Connexion = `${baseBE}/connexion`,
-    InscriptionMoniteur = `${baseBE}/moniteur/inscription`,
-    Etats = `${baseBE}/etat`,
-    Departements = `${baseBE}/departement`,
-    Activites = `${baseBE}/activite`,
-    Groupes = `${baseBE}/groupe`,
-    Campeurs = `${baseBE}/campeur`,
-    ModifierUtilisateur = `${baseBE}/modifier-utilisateur`,
-    Utilisateurs = `${baseBE}/utilisateurs`,
-    SupprimerUtilisateur = `${baseBE}/supprimer-utilisateur`,
-    Tentes = `${baseBE}/tente`,
-    Moniteurs = `${baseBE}/moniteurs`,
-    HoraireTypique = `${baseBE}/horaire-typique`,
-    HoraireJournaliere = `${baseBE}/horaire-journaliere`,
-    Periodes = `${baseBE}/periode`,
-    ActiviteMoniteur = `${baseBE}/activite-moniteur`,
+export namespace RoutesBE {
+    export const Connexion = `${baseBE}/connexion`;
+    export const InscriptionMoniteur = `${baseBE}/moniteur/inscription`;
+    export const Etats = `${baseBE}/etat`;
+    export const Departements = `${baseBE}/departement`;
+    export const Activites = `${baseBE}/activite`;
+    export const Groupes = `${baseBE}/groupe`;
+    export const Campeurs = `${baseBE}/campeur`;
+    export const ModifierUtilisateur = `${baseBE}/modifier-utilisateur`;
+    export const Utilisateurs = `${baseBE}/utilisateurs`;
+    export const SupprimerUtilisateur = `${baseBE}/supprimer-utilisateur`;
+    export const Tentes = `${baseBE}/tente`;
+    export const Moniteurs = `${baseBE}/moniteurs`;
+    export const HoraireTypique = `${baseBE}/horaire-typique`;
+    export const HoraireJournaliere = `${baseBE}/horaire-journaliere`;
+    export const Periodes = `${baseBE}/periode`;
+    export const ActiviteMoniteur = `${baseBE}/activite-moniteur`;
 }

@@ -1,8 +1,10 @@
 package com.hat.maker.controller;
 
+import com.hat.maker.MakerApplication;
 import com.hat.maker.service.ActiviteService;
 import com.hat.maker.service.dto.ActiviteDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +13,6 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(path = "/activite")
 @RequiredArgsConstructor
 public class ActiviteController {

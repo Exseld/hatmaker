@@ -1,5 +1,6 @@
 package com.hat.maker.controller;
 
+import com.hat.maker.TestConfig;
 import com.hat.maker.service.HoraireJournaliereService;
 import com.hat.maker.service.dto.HoraireJournaliereDTO;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,6 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ContextConfiguration;
 
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +17,7 @@ import java.util.Objects;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+@ContextConfiguration(classes = {TestConfig.class, HoraireJournaliereController.class})
 class HoraireJournaliereControllerTest {
 
     @InjectMocks

@@ -1,6 +1,7 @@
 package com.hat.maker.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hat.maker.TestConfig;
 import com.hat.maker.service.CampeurService;
 import com.hat.maker.service.GroupeService;
 import com.hat.maker.service.dto.CampeurDTO;
@@ -11,6 +12,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -26,6 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest(CampeurController.class)
+@ContextConfiguration(classes = {TestConfig.class, CampeurController.class})
 public class CampeurControllerTest {
     @Autowired
     private MockMvc mockMvc;

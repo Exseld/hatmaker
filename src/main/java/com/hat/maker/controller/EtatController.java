@@ -11,7 +11,6 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(path = "/etat")
 @RequiredArgsConstructor
 public class EtatController {

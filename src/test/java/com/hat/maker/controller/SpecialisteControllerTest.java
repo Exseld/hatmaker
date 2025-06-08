@@ -1,6 +1,7 @@
 package com.hat.maker.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hat.maker.TestConfig;
 import com.hat.maker.repository.SpecialisteRepository;
 import com.hat.maker.service.SpecialisteService;
 import com.hat.maker.service.dto.SpecialisteCreeDTO;
@@ -11,6 +12,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -21,6 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest(SpecialisteController.class)
+@ContextConfiguration(classes = {TestConfig.class, SpecialisteController.class})
 public class SpecialisteControllerTest {
     @Autowired
     private MockMvc mockMvc;
